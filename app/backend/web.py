@@ -1,5 +1,9 @@
 from flask import Flask, send_from_directory, request, jsonify
-app = ""
+from pathlib import Path
+
+current_dir = Path(__file__).resolve().parent
+filepath = current_dir.parent / "furntend"
+app = Flask(filepath, static_folder="static", static_url_path="") #""= lochost
 def init(fileroot):
     global app
     app = Flask(fileroot, static_folder="static", static_url_path="") #""= lochost
@@ -19,3 +23,8 @@ def rec():
 
 def run(port=5000,url=""):
     app.run(debug=True, host='', port=port)
+
+
+def start_app(filepath=filepath, port=5000, url=""):
+    init(filepath)
+    run(port, url)
