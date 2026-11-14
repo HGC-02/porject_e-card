@@ -4,31 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script>
-      async function postData(payload) {
-        try {
-          const response = await fetch(window.location.origin + "/rec", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload),
-          });
-
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-
-          const result = await response.json();
-          console.log("Created:", result);
-        } catch (error) {
-          console.error("Error posting data:", error);
-        }
-      }
-    </script>
+    <script src="index.js"></script>
   </head>
   <body>
     <h1>hi i am test</h1>
-    <button onclick="postData()">hi</button>
+    <button
+      onclick="
+        postData('+');
+        QrCode();
+      "
+    >
+      next
+    </button>
+    <img id="QR"></img>
+    <button
+      onclick="
+        postData('-');
+        QrCode();
+      "
+    >
+      back
+    </button>
   </body>
 </html>
