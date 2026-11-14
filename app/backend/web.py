@@ -19,6 +19,7 @@ def rec():
     if not data:
         return jsonify({"error": "No data provided"}), 400
     #add func of sent back to the logic proc 
+    print(data)
     return jsonify({"message": "Data received successfully", "data": data}), 200
 
 def run(port=5000,url=""):
