@@ -3,14 +3,14 @@ from pathlib import Path
 
 current_dir = Path(__file__).resolve().parent
 filepath = current_dir.parent / "furntend"
-app = Flask(filepath, static_folder="static", static_url_path="") #""= lochost
-def init(fileroot):
-    global app
-    app = Flask(fileroot, static_folder="static", static_url_path="") #""= lochost
+print(filepath)
+app = Flask(str(filepath), static_folder=str(filepath), static_url_path="") #""= lochost
+
     
 #@app
 @app.route('/')#call func when user access 
 def index():
+    print(app.static_folder)
     return send_from_directory(app.static_folder, 'index.html')
     
 @app.route('/rec', methods=['POST'])
@@ -26,5 +26,6 @@ def run(port=5000,url=""):
 
 
 def start_app(filepath=filepath, port=5000, url=""):
-    init(filepath)
     run(port, url)
+
+start_app()
