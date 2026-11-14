@@ -33,9 +33,10 @@ async function QrCode() {
 
   // Parse the response body as JSON
   const data = await response.json();
-  const info = JSON.stringify(data);
   const img = document.getElementById("QR");
   const name = document.getElementById("name");
+  name.textContent = data.qr_name;
+  console.log("hi:", data.qr_name);
   console.log(data.file_name);
   console.log(data);
 
