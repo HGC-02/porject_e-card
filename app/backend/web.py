@@ -15,6 +15,8 @@ def index():
     
 @app.route('/rec', methods=['POST'])
 def rec():
+    with open((current_dir/"qr.json"),"r") as f:
+        qr=json.load(f)
     data = request.get_json()
     if not data:
         return jsonify({"error": "No data provided"}), 400
@@ -26,7 +28,7 @@ def rec():
     with open( (current_dir/"now_index.txt") ,"r") as f:
             index=f.read()
     with open( (current_dir/"now_index.txt"),"w") as f:
-            if int(index) >= 0:
+            if (int(index)+x) >= 0 and (int(index)+x) < len(qr):
                 f.write(str(int(index)+x))
             else:
                 f.write(str(index))
