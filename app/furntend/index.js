@@ -40,7 +40,9 @@ async function QrCode() {
   console.log(data.file_name);
   console.log(data);
 
-  img.src = "qr/" + data.file_name;
+  //img.src = "qr/" + data.file_name;
+  img.src = "qr/QR_code_for_mobile_English_Wikipedia.svg"
   return data;
 }
+
 QrCode();

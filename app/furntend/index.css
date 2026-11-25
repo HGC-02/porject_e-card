@@ -1,17 +1,41 @@
 :root{
     background: black;
+    --defcolor: #ff0000;
 }
 
 #card{
-    position: relative;
-    top: 25dvh;
-    left: 25dvw;
-    background-color: #fff;
+    background-color: var(--defcolor);
     width: 50dvw;
     height: 97dvh;
     display: grid;
     place-content: center;
 }
+#QR_box{
+    position: relative;
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    background-color: hsl(from var(--defcolor) calc(h+180deg) s 1);
+    color: hsl(from var(--defcolor) calc(h+180deg) s 1);
+    display: grid;
+}
 #QR{
-    
+    max-width: 100%;          /* Prevents horizontal overflow */
+    max-height: 200px;        /* Adjust this value to fit your screen height */
+    width: auto;
+    height: auto;
+    display: block;
+    position: absolute;
+
+}
+
+html, body {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  /* Prevents rubber-band bounce scrolling on mobile/touchscreens */
+  overscroll-behavior: none; 
+  touch-action: none;
 }
