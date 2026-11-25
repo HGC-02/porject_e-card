@@ -5,22 +5,21 @@
 
 #card{
     background-color: var(--defcolor);
-    width: 50dvw;
-    height: 97dvh;
+    width: 70dvw;
+    aspect-ratio: 1/2 ;
     display: grid;
     place-content: center;
 }
 #QR_box{
     position: relative;
-    width: 50%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 2 / 2;
     background-color: hsl(from var(--defcolor) calc(h+180deg) s 1);
     color: hsl(from var(--defcolor) calc(h+180deg) s 1);
     display: grid;
 }
 #QR{
     max-width: 100%;          /* Prevents horizontal overflow */
-    max-height: 200px;        /* Adjust this value to fit your screen height */
+    max-height: 100%;        /* Adjust this value to fit your screen height */
     width: auto;
     height: auto;
     display: block;
