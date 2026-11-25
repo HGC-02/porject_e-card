@@ -1,17 +1,19 @@
 :root{
     background: black;
-    --defcolor: #ff0000;
+    --defcolor: #ff3000;
 }
 
 #card{
     background-color: var(--defcolor);
     width: 70dvw;
     aspect-ratio: 1/2 ;
-    display: grid;
+    display: flex;
     place-content: center;
 }
 #QR_box{
     position: relative;
+    width: 100%;
+    top: calc((100dvh - 100cqh)/2);
     aspect-ratio: 2 / 2;
     background-color: hsl(from var(--defcolor) calc(h+180deg) s 1);
     color: hsl(from var(--defcolor) calc(h+180deg) s 1);
@@ -24,7 +26,7 @@
     height: auto;
     display: block;
     position: absolute;
-
+    top: calc((100dvh - 100cqh)/2);
 }
 
 html, body {
