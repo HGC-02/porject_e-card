@@ -3,11 +3,15 @@
 }
 
 #card{
+    position: relative;
+    top: 25dvh;
+    left: 25dvw;
     background-color: #fff;
-    width: ;
-    padding: 50px;
-    margin: 20px;
+    width: 50dvw;
+    height: 97dvh;
+    display: grid;
+    place-content: center;
 }
 #QR{
-
+    
 }
