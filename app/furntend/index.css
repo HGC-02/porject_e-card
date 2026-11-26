@@ -8,6 +8,8 @@
     width: 70dvw;
     aspect-ratio: 1/2 ;
     display: flex;
+    justify-content: center;
+    align-items: center;
     place-content: center;
 }
 #QR_box{
@@ -24,9 +26,7 @@
     max-height: 100%;        /* Adjust this value to fit your screen height */
     width: auto;
     height: auto;
-    display: block;
     position: absolute;
-    top: calc((100dvh - 100cqh)/2);
 }
 
 html, body {
