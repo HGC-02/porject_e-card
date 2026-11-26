@@ -5,29 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css"> 
   </head>
   <body>
-    <h1>hi i am test</h1>
-    <button
-      onclick="
-        postData('+');
-        QrCode();
-      "
-    >
-      next
-    </button>
-    <br />
-    <br />
-    <img id="QR"></img>
-    <div id="name"></div>
-    <br />
-    <button
-      onclick="
-        postData('-');
-        QrCode();
-      "
-    >
-      back
-    </button>
+    <div id="card">
+      <button id="btu"
+        onclick="
+          postData('+');
+          QrCode();
+        "
+      >
+        next
+      </button>
+      
+      <div id="QR_box">
+        <img id="QR"></img>
+        <div id="box">
+          <div id="name">hi</div>
+        </div>
+      </div>
+      <button id="btu"
+        onclick="
+          postData('-');
+          QrCode();
+        "
+      >
+        back
+      </button>
+    </div>
   </body>
 </html>

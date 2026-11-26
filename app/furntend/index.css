@@ -1,0 +1,76 @@
+:root{
+    background-image: linear-gradient(53deg,#82cbf5 ,var(--defcolor));
+    --defcolor: #321ba8;
+}
+
+#card{
+    gap:3dvw;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /*glass*/
+    width: 74dvw;
+    aspect-ratio: 1/2 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-content: center;
+    border-radius: 12px;
+}
+#QR_box{
+    flex-direction: column;
+    position: relative;
+    width: 250%;
+    aspect-ratio: 2 / 2;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+#QR{
+    max-width: 150%;          /* Prevents horizontal overflow */
+    max-height: 150%;        /* Adjust this value to fit your screen height */
+    height: 90%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    color: #fff;
+    padding-top: 8%;
+}
+
+html, body {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  /* Prevents rubber-band bounce scrolling on mobile/touchscreens */
+  overscroll-behavior: none; 
+  touch-action: none;
+}
+#box{
+    place-items: center;
+    display: grid;
+    background-color:#5c7aff;
+    border-radius: 4px;
+    height: calc(4/30*100%);
+    width: 70.1%;
+    align-items: center;
+    
+}
+#btu{
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: block;
+    width: 70%;
+    aspect-ratio: 1/1.5;
+    border-radius: 90px;
+    color: #fff;
+}
