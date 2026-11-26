@@ -27,6 +27,7 @@
     background-color: #fff;
     display: flex;
     align-items: center;
+    place-items: center;
     flex-direction: column;
     
 }
@@ -38,6 +39,7 @@
     position: absolute;
     color: #fff;
     padding-top: 8%;
+    z-index: 0;
 }
 
 html, body {
@@ -52,6 +54,7 @@ html, body {
   touch-action: none;
 }
 #box{
+    top: 30px;
     place-items: center;
     display: grid;
     background-color:#5c7aff;
@@ -59,7 +62,8 @@ html, body {
     height: calc(4/30*100%);
     width: 70.1%;
     align-items: center;
-    
+    z-index: 1;
+
 }
 #btu{
 
