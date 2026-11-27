@@ -32,14 +32,14 @@ with open(current_dir/"backend/now_index.txt","w")as f:
 
 
 
-command = ["python", current_dir/"backend/main.py"]  # Replace with your executable/command
+command = current_dir/"backend/main.py"  # Replace with your executable/command
 
 if sys.platform == "win32":
     # Windows: Detach from the current console so it doesn't close with the parent
-    subprocess.Popen(
-        command,
-        creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP,
-        close_fds=True,
-    )
+    print("win")
+    subprocess.Popen([sys.executable, command])
+
+    sys.exit(0)
+
 else:
     os.execvp("python3", ["python3", current_dir/"backend/main.py"])
