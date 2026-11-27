@@ -12,6 +12,16 @@ app = Flask(str(filepath), static_folder=str(filepath), static_url_path="") #""=
 @app.route('/')#call func when user access 
 def index():
     print(app.static_folder)
+    userdata=current_dir.parent/"userdata/qr.json"
+    with open(str(current_dir/"qr.json"),"r") as f:
+        qr=json.load(f)
+        update=f.read()
+    with open(str(userdata),"w")as f:
+        print(update)
+        f.write(update)
+    shutil.rmtree(current_dir.parent/"userdata/qr")
+    shutil.copytree(current_dir.parent/"furntend/qr",current_dir.parent/"userdata/qr" )
+    
     return send_from_directory(app.static_folder, 'index.html')
     
 @app.route('/rec', methods=['POST'])
@@ -21,8 +31,10 @@ def rec():
         qr=json.load(f)
         update=f.read()
     with open((userdata,"w"))as f:
+        print(update)
         f.write(update)
-    shutil.copytree(current_dir.parent(), qr, dirs_exist_ok=True)
+    shutil.rmtree(current_dir.parent()/"userdata/qr")
+    shutil.copytree(current_dir.parent()/"furntend/qr",current_dir.parent()/"userdata/qr" )
     
     data = request.get_json()
     if not data:
