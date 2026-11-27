@@ -26,15 +26,15 @@ def index():
     
 @app.route('/rec', methods=['POST'])
 def rec():
-    userdata=current_dir.parent()/"userdata/qr.json"
+    userdata=current_dir.parent/"userdata/qr.json"
     with open((current_dir/"qr.json"),"r") as f:
         qr=json.load(f)
         update=f.read()
-    with open((userdata,"w"))as f:
+    with open(userdata,"w")as f:
         print(update)
         f.write(update)
-    shutil.rmtree(current_dir.parent()/"userdata/qr")
-    shutil.copytree(current_dir.parent()/"furntend/qr",current_dir.parent()/"userdata/qr" )
+    shutil.rmtree(current_dir.parent/"userdata/qr")
+    shutil.copytree(current_dir.parent/"furntend/qr",current_dir.parent/"userdata/qr" )
     
     data = request.get_json()
     if not data:

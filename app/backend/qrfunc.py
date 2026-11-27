@@ -1,5 +1,6 @@
 import qrcode
 import json
+import sys
 from pathlib import Path
 
 current_dir = Path(__file__).resolve().parent
@@ -17,13 +18,12 @@ def add_to_json_file( name,filename):
     ] 
     with open(current_dir/"qr.json",'r') as f:
         x=json.load(f)
-        print(x)
         if x:
             payload.extend(x)
-        print(payload)
-    with open(current_dir/"qr.json", 'w') as f:
-        json.dump(payload, f)
-        print(current_dir/"qr.json")
+            print(payload)
+    with open(current_dir/"qr.json","w") as f:
+        json.dump(payload,f)
+
 def add_link(link,name):
     qr_code_path = generate_qr_code(link, f"{name}.png")
     print(qr_code_path)

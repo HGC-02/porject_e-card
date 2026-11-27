@@ -6,7 +6,7 @@ import time
 current_dir = Path(__file__).resolve().parent
 
 time.sleep(1)
-web=subprocess.Popen([sys.executable, str(current_dir / "web.py")],stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+web=subprocess.Popen([sys.executable, str(current_dir / "web.py")],stdout=subprocess.DEVNULL)
 
 try:
     qrcodetui.main()
