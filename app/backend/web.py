@@ -1,6 +1,7 @@
 from flask import Flask, send_from_directory, request, jsonify
 from pathlib import Path
 import json
+import shutil
 current_dir = Path(__file__).resolve().parent
 filepath = current_dir.parent / "furntend"
 print(filepath)
@@ -15,8 +16,14 @@ def index():
     
 @app.route('/rec', methods=['POST'])
 def rec():
+    userdata=current_dir.parent()/"userdata/qr.json"
     with open((current_dir/"qr.json"),"r") as f:
         qr=json.load(f)
+        update=f.read()
+    with open((userdata,"w"))as f:
+        f.write(update)
+    shutil.copytree(current_dir.parent(), qr, dirs_exist_ok=True)
+    
     data = request.get_json()
     if not data:
         return jsonify({"error": "No data provided"}), 400
